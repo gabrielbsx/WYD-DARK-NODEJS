@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const { User } = require('../models/user')
 
 module.exports.index = async (application, req, res) => {
@@ -29,18 +30,19 @@ module.exports.index = async (application, req, res) => {
             })
             
             if (loginUser !== false) {
-                if ()
-            } else {
+                if (bcrypt.compareSync(req.body.pass, loginUser.password)) {
+                    msg.push({
+                        type: 'success',
+                        content: 'Login efetuado com sucesso!'
+                    })
+                }
+            }
+            if (msg.length == 0 ) {
                 msg.push({
                     type: 'error',
                     content: 'Não foi possível efetuar o login!'
                 })
             }
-
-            msg.push({
-                type: 'success',
-                content: 'login efetuado com sucesso'
-            })
         }
     }
     
