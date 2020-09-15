@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt">
+<%- include('partials/head.ejs') %>
+    <% if (hero == false) { %>
+        <body>
+    <% } else { %>
+        <body class="page">
+    <% } %>
+        <%- include('partials/header.ejs') %>
+            <div class="informer">
+                <%- include('partials/boxheader.ejs') %>
+                <% if (hero == false) { %>
+                    <%- include('partials/message.ejs') %>
+                    <%- body %>
+                <% } %>
+            </div>
+                <%- include('partials/footer.ejs') %>
+        </body>
+</html>

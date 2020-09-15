@@ -1,0 +1,110 @@
+ <% if (hero == false) { %>
+    <div class="container flex">
+        <div class="streamBlock">
+            <span class="title">
+                Prints do mês
+                <a href="#" target="_blank"></a>
+            </span>
+            <button type="button" class="streamBlock_top sidebar-video-open" data-toggle="modal" data-target="#video2">
+                <img src="https://wyd2.com.br/wp-content/uploads/2018/10/black.gif" alt="">
+            </button>
+            <div class="streamBlock_flex flex">
+                <div class="streamBlock_bottom sidebar-video-open" data-toggle="modal" data-target="#youtube-video">
+                    <img src="https://wyd2.com.br/wp-content/uploads/2018/10/natu.gif" alt="" />
+                </div>
+                <div class="streamBlock_bottom sidebar-video-open"  data-toggle="modal" data-target="#youtube-video-2">
+                    <img src="https://wyd2.com.br/wp-content/uploads/2018/10/elemental.gif" alt="" />
+                </div>
+            </div>
+
+        </div>
+        <!--streamBlock-->
+        <div style="background: black" class="info-panel">
+            <div class="middle-info-block">
+                <div style="background: #101010; padding-left: 40px;">
+                    <div class="row">
+                        <div class="middle-info-online col-lg-4 col-md-4 col-sm-4 col-12"
+                            style="background: url(img/ico-off.png) no-repeat left;">
+                            <small>Online</small><br>
+                            <span class='game-off'>0</span></div>
+                        <div class="middle-info-server col-lg-4 col-md-4 col-sm-4 col-12">
+                            <small>Próxima Atualização</small><br>
+                            <div style="color: #f3f3f3; font-size: 12px">
+                                12 de setembro </div>
+                        </div>
+                        <div class="middle-info-enemy col-lg-4 col-md-4 col-sm-4 col-12">
+                            <small>Reinos</small><br>
+                            <span class='red'>50%</span> : <span class='red' style="color: rgb(70, 70, 214)">50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="news" style="width: 100%;">
+                        <span class="title">
+                            Patchlist
+                            <a href="#">Todos patchlist</a>
+                        </span>
+                        <ul class="topic_list topic_list-news">
+                            <li>
+                                <i class="icon icon-news"></i>
+                                <div class="topic_list-info">
+                                    <a href="#" class="topic-title" title="Notícia 01 título" target="_blank">
+                                        Notícia 01 título
+                                    </a>
+                                    <span>07 de setembro de 2020</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="icon icon-news"></i>
+                                <div class="topic_list-info">
+                                    <a href="#" class="topic-title" title="Notícia 02 título" target="_blank">
+                                        Notícia 02 título
+                                    </a>
+                                    <span>07 de setembro de 2020</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="icon icon-news"></i>
+                                <div class="topic_list-info">
+                                    <a href="#" class="topic-title" title="Notícia 03 título" target="_blank">
+                                        Notícia 03 título
+                                    </a>
+                                    <span>07 de setembro de 2020</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--news-->
+                </div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <header>
+        <div class="container">
+        </div>
+    </header>
+    <div class="content">
+        <div class="contentTop">
+            <div class="container">
+                <div class="hero"></div>
+                <div class="effect"></div>
+                <div class="content-title">
+                    <h1><%= title %></h1>
+                    <div class="breadcrumbs">
+                        <a href="#">Home</a>
+                        <span></span>
+                        <%= subtitle %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contentBottom">
+            <div class="container">
+                <div class="content-page" style="padding: 0px">
+                    <%- body %>
+                </div>
+            </div>
+        </div>
+    </div>  
+<% } %>

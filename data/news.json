@@ -1,0 +1,12 @@
+{
+    "news": [
+        {
+            "title": "First news",
+            "content": "Lorem Ipsum is simply dummy text of the printing v1"
+        },
+        {
+            "title": "Seccond news",
+            "content": "Lorem Ipsum is simply dummy text of the printing v2"
+        }
+    ]
+}

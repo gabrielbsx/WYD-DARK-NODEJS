@@ -1,0 +1,27 @@
+<%- contentFor('body') %>
+<%- include('../partials/message.ejs') %>
+<div class="h2"><span>Novidades</span></div>
+<div class="top">
+    <div class="container">
+        <div class="row">
+            <% if (news.length > 0){ %>
+                <% for (var i = 0; i < news.length; i++) { %>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="topBlock">
+                        <span class="title"><%= news[i].title %></span>
+                    </div>
+                    <div class="topTable">
+                        <div class="text-center" style="width:100%; padding: 25px 0px 10px 20px;">
+                            <div class="">
+                                <span class="color-yellow">
+                                    <%= news[i].content %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</div>

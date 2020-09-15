@@ -1,0 +1,13 @@
+<% if (message.length > 0) { %>
+    <% for (var i = 0; i < message.length; i++) { %>
+        <% if (message[i].type == 'error') { %>
+            <div class="col-md-12" style="padding: 0.8em;margin: 1em 0;color:white;background-color: rgb(87, 24, 24);">
+        <% } else { %>
+            <div class="col-md-12" style="padding: 0.8em;margin: 1em 0;color:white;background-color: rgb(66, 64, 148);">
+        <% } %>
+                <div class="flex" style="display:block;margin: auto;text-align:center;">
+                    <%= message[i].content %>
+                </div>
+            </div>
+    <% } %>
+<% } %>

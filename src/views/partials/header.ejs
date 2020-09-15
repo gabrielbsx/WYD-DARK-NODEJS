@@ -1,0 +1,44 @@
+<%- include('menu.ejs') %>
+<% if (hero == false) { %>
+    <header>    
+        <div class="container">
+            <div class="ray"></div>
+            <div class="rainbow"></div>
+            <div class="sparks">
+                <div class="spark_1"></div>
+                <div class="spark_2"></div>
+                <div class="spark_3"></div>
+                <div class="spark_4 spark-big"></div>
+                <div class="spark_5 spark-big"></div>
+            </div>
+            <div class="logo">
+                <a href="#" class="bright"><img src="/images/logo.png" alt="Logo"></a>
+            </div>
+            <!--logo-->
+            <div class="headerTitle">
+                <span class="h1">
+                    Servidor online<br> <span class='color-yellow'>- 07 setembro</span> </span>
+            </div>
+            <!--headerTitle-->
+            <div class="headerBlock flex-s-c">
+                <div class="headerBlock_text">
+                    Convide seus amigos para jogar
+                    <a href="#" target="_blank">
+                        Clique aqui <i class="icon icon-more"></i>
+                    </a>
+                </div>
+                <div class="headerBlock_buttons flex-c">
+                    <a href="#" class="game-button head-button bright">
+                        <span>Download</span>
+                    </a>
+                    <a href="#" class="about-button head-button bright">
+                        <span>Donate</span>
+                    </a>
+                </div>
+            </div>
+            <!--headerBlock-->
+        </div>
+    </header>
+<% } else { %>
+
+<% } %>
