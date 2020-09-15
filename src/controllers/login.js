@@ -35,6 +35,7 @@ module.exports.index = async (application, req, res) => {
                         type: 'success',
                         content: 'Login efetuado com sucesso!'
                     })
+                    req.session.user = loginUser
                 }
             }
             if (msg.length == 0 ) {
@@ -46,6 +47,8 @@ module.exports.index = async (application, req, res) => {
         }
     }
     
+    console.log(req.session)
+
     res.render('./pages/login', {
         title: 'Login',
         subtitle: 'Efetuar login',

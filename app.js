@@ -11,9 +11,13 @@ const app = express()
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 
+app.use(helmet())
+
 app.set('trust proxy', 1)
 app.use(session({
-    secret: '*Shr1996x#7575'
+    secret: '*Shr1996x#7575',
+    resave: false,
+    saveUninitialized: false,
 }))
 
 app.use(bodyParser.json())
@@ -24,10 +28,10 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 
 consign()
-    .include('src/routes')
-    .then('src/controllers')
-    .then('src/models')
-    .into(app)
+.include('src/routes')
+.then('src/controllers')
+.then('src/models')
+.into(app)
 
 app.listen(3000, () => {
     console.log('Website running!')
