@@ -1,0 +1,24 @@
+<%- contentFor('body') %>
+<%- include('../../partials/message.ejs') %>
+<div class="h2"><span><%- subtitle %></span></div>
+<div class="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="informer">
+                    <div class="flex">
+                        <div class="news" style="width: 100%;">
+                            <div class="col-md-12 row" style="margin: 0 auto;">
+                                <a href="/guildmark" class="title" style="padding: 0 0.8em;">Guildmark</a>
+                                <a href="/alterpass" class="title" style="padding: 0 0.8em;">Alterar senha</a>
+                                <% if (user.access >= 3) { %>
+                                    <a href="/viewaccount" class="title" style="padding: 0 0.8em;">Visualizar contas</a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

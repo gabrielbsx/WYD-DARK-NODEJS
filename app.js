@@ -20,6 +20,11 @@ app.use(session({
     saveUninitialized: false,
 }))
 
+app.use(function (req, res, next) {
+    res.locals.user = req.session.user
+    next()
+})
+
 app.use(bodyParser.json())
 app.use(expressLayouts)
 app.use(bodyParser.urlencoded({extended: true}))

@@ -8,7 +8,7 @@ module.exports.index = async (application, req, res) => {
     const rName = /^[a-zA-Z ]{4,16}$/
     const rUser = /^[a-zA-Z0-9]{4,12}$/
     const rPass = /^[a-zA-Z0-9]{4,12}$/
-
+    
     if (req.body.user || req.body.pass || req.body.email || req.body.pass2 || req.body.name) {
         if (!req.body.name.match(rName)) {
             msg.push({
@@ -42,12 +42,13 @@ module.exports.index = async (application, req, res) => {
         }
 
         var pass = await bcrypt.hashSync(req.body.pass, saltRounds)
-
+        
         if (msg.length == 0) {
             var CreateUser = await User.create({
                 name: req.body.name,
                 password: pass,
                 user: req.body.user,
+                access: 1,
                 email: req.body.email,
             }).then((user) => {
                 return true

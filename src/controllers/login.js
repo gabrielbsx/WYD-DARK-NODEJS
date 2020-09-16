@@ -28,17 +28,21 @@ module.exports.index = async (application, req, res) => {
             }).catch((err) => {
                 return false
             })
-            
+
             if (loginUser !== false) {
-                if (bcrypt.compareSync(req.body.pass, loginUser.password)) {
-                    msg.push({
-                        type: 'success',
-                        content: 'Login efetuado com sucesso!'
-                    })
-                    req.session.user = loginUser
+                if (loginUser !== null) {
+                    if (await bcrypt.compareSync(req.body.pass, loginUser.password)) {
+                        msg.push({
+                            type: 'success',
+                            content: 'Login efetuado com sucesso!'
+                        })
+                        req.session.user = loginUser
+                        res.redirect('/dashboard')
+                        return;
+                    }
                 }
             }
-            if (msg.length == 0 ) {
+            if (msg.length == 0) {
                 msg.push({
                     type: 'error',
                     content: 'Não foi possível efetuar o login!'
@@ -46,9 +50,6 @@ module.exports.index = async (application, req, res) => {
             }
         }
     }
-    
-    console.log(req.session)
-
     res.render('./pages/login', {
         title: 'Login',
         subtitle: 'Efetuar login',

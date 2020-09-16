@@ -4,8 +4,13 @@
             Jogue agora mesmo WYD Dark, servidor recem inaugurado
         </div>
         <div class="topLine_links flex-c">
-            <a href="/login">login</a>
-            <a href="/register">Registrar</a>
+            <% if (user) { %>
+                <a href="/dashboard">Painel de Controle</a>
+                <a href="/logout">Sair</a>
+            <% } else { %>
+                <a href="/login">login</a>
+                <a href="/register">Registrar</a>
+            <% } %>
         </div>
     </div>
 </div>

@@ -24,6 +24,13 @@ const User = db.sequelize.define('Users', {
             len: [4, 12],
         },
     },
+    access: {
+        allowNull: false,
+        type: db.Sequelize.STRING,
+        validate: {
+            len: [1],
+        },
+    },
     password: {
         allowNull: false,
         type: db.Sequelize.STRING,
