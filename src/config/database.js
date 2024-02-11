@@ -3,7 +3,7 @@ const config = {
     dialect: 'mysql',
     host: 'localhost',
     username: 'kentaro',
-    password: '55735573',
+    password: '----',
     database: 'wyddark',
     define: {
         timestamps: true,
